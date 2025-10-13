@@ -1,0 +1,105 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+.footer
+{
+background-color: #000000;
+ position: fixed;
+ bottom: 0%;
+ left: 0%;
+ width: 100%;
+margin-top: 20%;
+
+
+}
+.elements
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    align-items: flex-start;
+}
+
+.elements ul
+{
+    list-style-type: none;
+}
+
+.exclusive
+{
+  color: #ffffff;
+  font-family: poppins;
+}
+.exclusive h3
+{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 24px;
+    letter-spacing: 3%;
+    padding-bottom: 10%;
+}
+
+.exclusive p{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 10%;
+}
+.exclusive h5{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 10%;
+}
+.exclusive .email
+{
+    /* display: flex; */
+}
+.exclusive .email .emailicon
+{
+    /* color: #000000; */
+}
+.exclusive input{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 4%;
+}
+.Account
+{
+    /* background-color: #110847; */
+     color: #ffffff;
+  font-family: poppins;
+}
+.QuickLink
+{
+    /* background-color: #6e1248; */
+     color: #ffffff;
+  font-family: poppins;
+}
+.DownloadApp
+{
+    /* background-color: #3d0a1b; */
+     color: #ffffff;
+  font-family: poppins;
+}
+.qrcode{
+    padding-top:8% ;
+    display: flex;
+    gap: 20px;
+}
+
+.email{
+    display: flex;
+}
+
+.socialmedia ul
+{
+    display: flex;
+    gap: 10%;
+    padding-top: 5%;
+}

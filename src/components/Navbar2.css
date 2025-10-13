@@ -1,0 +1,145 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+
+ .header
+{
+    background-color:#000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+   
+
+}
+.summer
+{
+   
+    padding: 10px;
+    margin-left: 15%;
+    color:#ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: poppins;
+}
+.summer a{
+     color:#ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: poppins;
+    font-style:SemiBold;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+
+.english
+{
+  
+    padding: 10px;
+    margin-right: 20%;
+}
+
+.navbar1
+{
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+}
+
+.links
+{
+    display: flex;
+}
+
+.search input{
+    padding: 5%;
+}
+.links h3{
+    padding-right: 20%;
+}
+
+.links ul{
+    list-style-type:none;
+      display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50%;
+}
+.links ul li
+{
+       display: flex;
+    justify-content: space-;
+    align-items: center;
+    
+}
+.links ul li .active
+{
+    text-decoration: underline;
+}
+.links ul li a{
+text-decoration: none;
+color: #000000;
+}
+
+.search{
+    display: flex;
+    gap: 30%;
+}
+
+.search form{
+    /* display: flex; */
+}
+.wishlist
+{
+    background-color: transparent;
+    border: none;
+  
+}
+.cart
+{
+ background-color: transparent;
+    border: none;
+}
+.wishlist .heart
+{
+  transform: scale(1.9);
+}
+
+.cartshop
+{
+    transform: scale(1.9);
+
+}
+@media(orientation:portrait) and ( max-width:820px) and (min-width:344px)
+{
+    .summer
+{ 
+   padding: 5px;
+   margin-left: 0%;
+    color: #ffffff;
+    font-size: 7px;
+    font-weight: 400;
+    font-family: poppins;
+}
+
+.summer a{
+     color:#ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: poppins;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+
+
+}

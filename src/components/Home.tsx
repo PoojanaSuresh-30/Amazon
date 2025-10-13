@@ -1,0 +1,213 @@
+import React,{Component} from "react";
+import { useState,useEffect } from "react";
+import './HomePage.css';
+import HomePagebg from '../assets/images/HomePagebg.svg';
+import rectangle from '../assets/images/Rectangle 18.svg';
+import { IoLogoApple } from "react-icons/io5";
+import frame1 from '../assets/images/Frame1.svg';
+import frame2 from '../assets/images/Frame2.svg';
+import frame3 from '../assets/images/Frame3.svg';
+import frame4 from '../assets/images/Frame4.svg';
+import frame5 from '../assets/images/Frame5.svg';
+import frame6 from '../assets/images/Frame6.svg';
+import frame7 from '../assets/images/Frame7.svg';
+import frame8 from '../assets/images/Frame8.svg';
+import frame9 from '../assets/images/Frame9.svg';
+import { MdOutlineArrowCircleLeft } from "react-icons/md";
+import { MdOutlineArrowCircleRight } from "react-icons/md";
+import { GoStarFill } from "react-icons/go";
+import { BsCart4 } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa6";
+
+
+
+export default function HomePage()
+{
+        const countdownDate : Date = new Date("October 16, 2025 15:50:00");
+        const [timeLeft, setTimeLeft] = useState(
+            {
+                days : 0,
+                hours : 0,
+                minutes : 0,
+                seconds : 0,   
+            }
+        );
+    useEffect(()=>
+    {
+   const Interval = setInterval(()=>
+        {
+            const now : number = new Date().getTime();
+            const distance : number = countdownDate.getTime() - now;
+                 if (distance>0)
+                 {
+     const days : number = Math.floor(distance / (1000*60*60*24));
+            const hours : number = Math.floor(distance % (1000*60*60*24)/ (1000*60*60));
+            const minutes : number = Math.floor(distance % (1000*60*60)/(1000*60*60));
+            const seconds : number = Math.floor(distance % (1000*60)/(1000));
+                    setTimeLeft({ days, hours, minutes, seconds });
+                 }
+            else{
+                clearInterval(Interval);
+                setTimeLeft({days : 0, hours:0, minutes:0, seconds :0 });
+            }
+        },1000);
+    }, [countdownDate])        
+        return(
+            <section className="homepage">
+
+                <div className="iphone">
+                    <div>
+                     <img src={HomePagebg} alt="homePagebg" className="bg"/>
+                    </div>
+                </div>
+
+                <div className="flashsale">
+                    <div>
+                
+                    <div className="sales">
+                        <img src={rectangle} alt="rectangle" /><p className="sale">Today's</p>
+                        <br />
+                    </div>
+                    <h4>Flash Sale</h4>
+                    </div>     
+                    <div className="countdown">
+                           <ul className="timervalue">
+                        <li>Days</li>
+                        <li>Hours</li>
+                        <li>Minutes</li>
+                        <li>Seconds</li>
+                    </ul>
+
+                    <ul className="timer">
+                        <li>{timeLeft.days}</li>
+                        <li className="dots">:</li>
+                        <li>{timeLeft.hours}</li>
+                        <li className="dots">:</li>
+                        <li>{timeLeft.minutes}</li>
+                        <li className="dots">:</li>
+                        <li>{timeLeft.seconds}</li>
+                    </ul>
+
+                    </div>
+
+                    <div className="arrows">
+                           <MdOutlineArrowCircleLeft className="arrow1"/>
+                <MdOutlineArrowCircleRight className="arrow2"/>
+
+                    </div>
+                    
+                </div>
+
+                <div className="products">
+
+                    <div className="productFeature">
+                        <img src={frame1} alt="" />
+                        <p>HAVIT HV-G92 Gamepad</p>
+                        <p  className="rupees">$120 <span><s>$160</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+                        <br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                      <div className="productFeature">
+                        <img src={frame2} alt="" />
+                        <p>S-Series Comfort Chair </p>
+                        <p  className="rupees">$375 <span><s>$400</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                      <div className="productFeature">
+                        <img src={frame3} alt="" />
+                        <p>IPS LCD Gaming Monitor</p>
+                        <p  className="rupees"> $370 <span><s>$400</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                      <div className="productFeature">
+                        <img src={frame4} alt="" />
+                        <p>AK-900 Wired Keyboard</p>
+                        <p  className="rupees">$960 <span><s>$1160</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                      <div className="productFeature">
+                        <img src={frame5} alt="" />
+                        <p>ASUS FHD Gaming Laptop</p>
+                        <p  className="rupees">$960 <span><s>$1160</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                      <div className="productFeature">
+                        <img src={frame6} alt="" />
+                        <p>Quilted Satin Jacket</p>
+                        <p  className="rupees">$300 <span><s>$600</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                    <div className="productFeature">
+                        <img src={frame7} alt="" />
+                        <p>GP11 Shooter USB Gamepad</p>
+                        <p  className="rupees">$500 <span><s>$850</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+                    <div className="productFeature">
+                        <img src={frame8} alt="" />
+                        <p>RGB liquid CPU Cooler</p>
+                        <p  className="rupees">$400 <span><s>$520</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+   <div className="productFeature">
+                        <img src={frame9} alt="" />
+                        <p>Gucci duffle bag</p>
+                        <p className="rupees">$800 <span><s>$1160</s></span></p>
+                        <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
+<br />
+                        <br />
+                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <center style={{padding:60}}>
+                        <button  className="view">View All Products</button>
+                    </center>
+                </div>
+                <hr />
+            </section>
+        )
+    }
+
+
+

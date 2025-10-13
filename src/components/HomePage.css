@@ -1,0 +1,134 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    
+}
+
+.homepage
+{
+    padding:3%;
+    /* color: #ffffff;   */
+}
+.iphone
+{
+    background-color: #000000;
+    display: flex;
+   
+}
+
+.apple
+{
+    color: #ffffff;
+}
+.bg
+{
+
+  /* display: flex; */
+    justify-content: right;
+    padding-left: 80%;
+}
+.flashsale
+{
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+  
+}
+.sales
+{
+    
+    display: flex;
+    gap:2%;
+}
+.sale
+{
+    color: #DB4444;
+}
+ h4{
+    color: #000000;
+    padding-top: 10px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+.timervalue
+{
+    font-size: 25px;
+    font-weight: 400;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 25%;
+}
+.timer 
+{
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20%;
+}
+.dots
+{
+    color: #E07575;
+}
+.arrows
+{
+ gap: 100%;
+}
+.arrow1
+{
+    color: #000000;
+    /* transform: scale(1.2); */
+   
+}
+.arrow2
+{
+    color: #000000;
+    /* transform: scale(1.2); */
+    
+}
+.star
+{
+    color: #FFAD33;
+}
+.products
+{
+    display: flex;
+    gap: 5%;
+}
+.productFeature p{
+    
+}
+.productFeature button
+{
+    padding: 5%;
+    border: none;
+}
+.fea 
+{
+    color:#af1212;
+
+}
+.rupees
+{
+    color: #DB4444;
+}
+.rupees s{
+    color: #000000;
+}
+.view
+{
+    background-color: #af1212;
+    color:#ffffff;
+    font-size: 25px;
+    font-weight: 500;
+    padding:1%;
+    border: none;
+    border-radius: 8px;
+}
