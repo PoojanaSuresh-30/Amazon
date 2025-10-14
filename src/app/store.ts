@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import signupReducer from '../features/Signup/signupSlice';
 import authReducer from '../features/Signup/logincredentialsSlice';
 import { loadState, saveState } from '../utils/localStorage';
+import wishlistReducer from '../features/Signup/WishlistSlice';
 
 
 
@@ -10,6 +11,7 @@ const persistedState = loadState();
 const rootReducer = combineReducers({
   signup: signupReducer,
   auth: authReducer,
+  wishlist : wishlistReducer,
 });
 export const store = configureStore (
     {

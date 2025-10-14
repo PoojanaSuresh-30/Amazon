@@ -4,7 +4,7 @@ import LoginPage from "./components/Login";
 import HomePage from "./components/Home";
 import PublicLayout from "./components/PublicLayout";
 import HomeLayout from "./components/HomePageLayout";
-
+import Wishlist from "./components/Wishlist";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
 
         {/* Home page with account navbar */}
         <Route element={<HomeLayout />}>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/wishlist" element={<HomePage />} />
+          <Route path="/home" element={<HomePage/>} />
+          <Route path="/wishlist" element={<Wishlist/>} />
         </Route>
       </Routes>
     </BrowserRouter>

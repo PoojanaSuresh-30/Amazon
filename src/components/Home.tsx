@@ -18,11 +18,15 @@ import { MdOutlineArrowCircleRight } from "react-icons/md";
 import { GoStarFill } from "react-icons/go";
 import { BsCart4 } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa6";
+import{ useDispatch} from "react-redux";
+import { addtoWishlist } from "../features/Signup/WishlistSlice";
+import type{ Product, wishlistItem } from "../features/Signup/types";
+import { useNavigate } from "react-router-dom";
 
-
-
-export default function HomePage()
-{
+const HomePage : React.FC = () =>
+{ 
+    const dispatch = useDispatch();
+     const navigate = useNavigate();
         const countdownDate : Date = new Date("October 16, 2025 15:50:00");
         const [timeLeft, setTimeLeft] = useState(
             {
@@ -32,6 +36,14 @@ export default function HomePage()
                 seconds : 0,   
             }
         );
+
+    
+
+    const handleAddtowishlist = (product : Product) =>
+    {
+        dispatch(addtoWishlist(product));
+         navigate('/wishlist');
+    }
     useEffect(()=>
     {
    const Interval = setInterval(()=>
@@ -107,8 +119,14 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
                         <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
-
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                           id : "1",  
+        name: "HAVIT HV-G92 Gamepad",
+        price: 120,
+        imageURL: frame1,
+                        })}>
+                            < FaHeart className="fea"/>
+                            </button>
                     </div>
 
                       <div className="productFeature">
@@ -118,7 +136,14 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                            {
+       id : "2",  
+        name: "S-Series Comfort Chair",
+        price: 375,
+        imageURL: frame2,
+                        }
+                        )}>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -129,7 +154,12 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                            id : "3",
+                            name : "IPS LCD Gaming Monitor",
+                            price : 370,
+                            imageURL : frame3,
+                        })}>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -140,7 +170,14 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>
+                            handleAddtowishlist({
+                                id : "4",
+                                name : "AK - 900 Wired Keyboard",
+                                price : 960,
+                                imageURL : frame4,
+                            })
+                        }>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -151,7 +188,14 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                            {
+                                id : "5",
+                                name : "ASUS FHD Gaming Laptop",
+                                price : 960,
+                                imageURL : frame5,
+                            }
+                        )}>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -162,7 +206,14 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                            {
+                                id : "6",
+                                name :"Quilted Satin Jacket",
+                                price : 300,
+                                imageURL : frame6,
+                            }
+                        )}>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -173,7 +224,12 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                            id : "7",
+                            name : "GP11 Shooter USB Gamepad",
+                            price : 500,
+                            imageURL  : frame7,
+                        })}>< FaHeart className="fea"/></button>
 
                     </div>
                     <div className="productFeature">
@@ -183,7 +239,12 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                            id : "8",
+                            name : "RGB Liquid CPU cooler",
+                            price : 400,
+                            imageURL : frame8,
+                        })}>< FaHeart className="fea"/></button>
 
                     </div>
    <div className="productFeature">
@@ -193,7 +254,12 @@ export default function HomePage()
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button>< FaHeart className="fea"/></button>
+                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                            id : "9",
+                            name : "Gucci duffle bag",
+                            price : 800,
+                            imageURL : frame9,
+                        })}>< FaHeart className="fea"/></button>
 
                     </div>
 
@@ -209,5 +275,9 @@ export default function HomePage()
         )
     }
 
+export default HomePage;
 
+function dispatch(arg0: { payload: wishlistItem; type: "wishlist/addtoWishlist"; }) {
+    throw new Error("Function not implemented.");
+}
 

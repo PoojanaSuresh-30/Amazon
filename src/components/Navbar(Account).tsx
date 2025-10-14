@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import './Navbar2.css';
 import { FaRegHeart } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 
 
@@ -59,6 +60,7 @@ class Navbar2 extends Component {
 
 <button className="wishlist">< FaRegHeart className="heart" /></button>
 <button className="cart"><TiShoppingCart className="cartshop"/></button>
+<button className="account">< RiAccountCircleFill className="userProfile" /></button>
 
         </div>
       </div>

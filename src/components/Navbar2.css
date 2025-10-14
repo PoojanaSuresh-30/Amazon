@@ -109,6 +109,15 @@ color: #000000;
  background-color: transparent;
     border: none;
 }
+.account
+{
+     background-color: transparent;
+    border: none;
+}
+.account .userProfile
+{
+      transform: scale(1.9);
+}
 .wishlist .heart
 {
   transform: scale(1.9);
