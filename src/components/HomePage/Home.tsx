@@ -1,32 +1,32 @@
 import React,{Component} from "react";
 import { useState,useEffect } from "react";
 import './HomePage.css';
-import HomePagebg from '../assets/images/HomePagebg.svg';
-import rectangle from '../assets/images/Rectangle 18.svg';
+import HomePagebg from '../../assets/images/HomePagebg.svg';
+import rectangle from '../../assets/images/Rectangle 18.svg';
 import { IoLogoApple } from "react-icons/io5";
-import frame1 from '../assets/images/Frame1.svg';
-import frame2 from '../assets/images/Frame2.svg';
-import frame3 from '../assets/images/Frame3.svg';
-import frame4 from '../assets/images/Frame4.svg';
-import frame5 from '../assets/images/Frame5.svg';
-import frame6 from '../assets/images/Frame6.svg';
-import frame7 from '../assets/images/Frame7.svg';
-import frame8 from '../assets/images/Frame8.svg';
-import frame9 from '../assets/images/Frame9.svg';
+import frame1 from '../../assets/images/Frame1.svg';
+import frame2 from '../../assets/images/Frame2.svg';
+import frame3 from '../../assets/images/Frame3.svg';
+import frame4 from '../../assets/images/Frame4.svg';
+import frame5 from '../../assets/images/Frame5.svg';
+import frame6 from '../../assets/images/Frame6.svg';
+import frame7 from '../../assets/images/Frame7.svg';
+import frame8 from '../../assets/images/Frame8.svg';
+import frame9 from '../../assets/images/Frame9.svg';
 import { MdOutlineArrowCircleLeft } from "react-icons/md";
 import { MdOutlineArrowCircleRight } from "react-icons/md";
 import { GoStarFill } from "react-icons/go";
 import { BsCart4 } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa6";
 import{ useDispatch} from "react-redux";
-import { addtoWishlist } from "../features/Signup/WishlistSlice";
-import type{ Product, wishlistItem } from "../features/Signup/types";
-import { useNavigate } from "react-router-dom";
+import { addtoWishlist } from "../../features/Signup/WishlistSlice";
+import type{ Product, wishlistItem } from "../../features/Signup/types";
+// import { useNavigate } from "react-router-dom";
 
 const HomePage : React.FC = () =>
 { 
     const dispatch = useDispatch();
-     const navigate = useNavigate();
+    //  const navigate = useNavigate();
         const countdownDate : Date = new Date("October 16, 2025 15:50:00");
         const [timeLeft, setTimeLeft] = useState(
             {
@@ -42,7 +42,7 @@ const HomePage : React.FC = () =>
     const handleAddtowishlist = (product : Product) =>
     {
         dispatch(addtoWishlist(product));
-         navigate('/wishlist');
+        
     }
     useEffect(()=>
     {
@@ -120,7 +120,7 @@ const HomePage : React.FC = () =>
                         <br />
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
-                           id : "1",  
+                           id : 1,  
         name: "HAVIT HV-G92 Gamepad",
         price: 120,
         imageURL: frame1,
@@ -138,7 +138,7 @@ const HomePage : React.FC = () =>
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
-       id : "2",  
+       id : 2,  
         name: "S-Series Comfort Chair",
         price: 375,
         imageURL: frame2,
@@ -155,7 +155,7 @@ const HomePage : React.FC = () =>
 <br />
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
-                            id : "3",
+                            id : 3,
                             name : "IPS LCD Gaming Monitor",
                             price : 370,
                             imageURL : frame3,
@@ -172,7 +172,7 @@ const HomePage : React.FC = () =>
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>
                             handleAddtowishlist({
-                                id : "4",
+                                id : 4,
                                 name : "AK - 900 Wired Keyboard",
                                 price : 960,
                                 imageURL : frame4,
@@ -190,7 +190,7 @@ const HomePage : React.FC = () =>
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
-                                id : "5",
+                                id : 5,
                                 name : "ASUS FHD Gaming Laptop",
                                 price : 960,
                                 imageURL : frame5,
@@ -208,7 +208,7 @@ const HomePage : React.FC = () =>
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
-                                id : "6",
+                                id : 6,
                                 name :"Quilted Satin Jacket",
                                 price : 300,
                                 imageURL : frame6,
@@ -225,7 +225,7 @@ const HomePage : React.FC = () =>
 <br />
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
-                            id : "7",
+                            id : 7,
                             name : "GP11 Shooter USB Gamepad",
                             price : 500,
                             imageURL  : frame7,
@@ -240,7 +240,7 @@ const HomePage : React.FC = () =>
 <br />
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
-                            id : "8",
+                            id : 8,
                             name : "RGB Liquid CPU cooler",
                             price : 400,
                             imageURL : frame8,
@@ -255,7 +255,7 @@ const HomePage : React.FC = () =>
 <br />
                         <br />
                         <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
-                            id : "9",
+                            id : 9,
                             name : "Gucci duffle bag",
                             price : 800,
                             imageURL : frame9,

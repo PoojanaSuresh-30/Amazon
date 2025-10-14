@@ -1,0 +1,68 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.wishlist
+{
+    padding: 2%;
+}
+ .wishlistitems
+ {
+    display: flex;
+    gap: 80%;
+ }
+ .wishlistitems h4{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: poppins;
+ }
+ .wishlistitems button{
+    padding: 20%;
+    width: 200%;
+    font-size: 20px;
+    font-family: poppins;
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 8px;
+ }
+ .wishlist-items
+ {
+    display: flex;
+    gap: 10%;
+    padding: 5%;
+ }
+
+ p{
+    font-size: 20px;
+    font-family: poppins;
+    font-weight: 600;
+    line-height: 1.6;
+ }
+
+ .remove-item
+ {
+    padding: 5%;
+    border: none;
+    width: 20%;
+    margin-top: 15%;
+    border-radius: 8px;
+ }
+ .remove-item
+ {
+    transform: scale(1.8);
+ }
+
+ .addtocart
+ {
+    padding: 6%;
+        width: 54%;
+        border: none;
+        background-color: #000000;
+        font-size: 16px;
+        color: #ffffff;
+        font-family: 'Times New Roman', Times, serif;
+         border-radius: 8px;
+         
+ }

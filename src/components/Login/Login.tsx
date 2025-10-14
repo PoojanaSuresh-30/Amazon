@@ -1,12 +1,13 @@
 import React from "react";
 import { useState,useEffect} from "react";
 import{ useSelector, useDispatch } from "react-redux";
-import type { AppDispatch, RootState } from "../app/store.ts";
-import sideImage from "../assets/images/Side Image.svg";
+import type { AppDispatch, RootState } from "../../app/store.ts";
+import sideImage from "../../assets/images/Side Image.svg";
 import './Login.css';
 import TextField from "@mui/material/TextField";
-import {loginSuccess, loginFailure, clearAuthData,login} from '../features/Signup/logincredentialsSlice.ts';
+import {loginSuccess, loginFailure, clearAuthData,login} from '../../features/Signup/logincredentialsSlice.ts';
 import { useNavigate } from "react-router-dom";
+import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
 
 
 
@@ -40,7 +41,7 @@ import { useNavigate } from "react-router-dom";
                   email : string;
                   password : string;
                 }
-
+                dispatch(loginRequest(email,password));
              
               
   const savedData = localStorage.getItem('userProfile');
@@ -69,12 +70,25 @@ import { useNavigate } from "react-router-dom";
                 if(emailInput === email && passwordInput === password)
 
                 {
+                  interface logindata
+                  {
+                    email : string;
+                    password : string;
+                  }
+                const Logindata : logindata =
+                {
+                  email  : emailInput,
+                  password : passwordInput,
+                }
+                 
                   console.log('Successfully logged in!!');
                   
                   
                              dispatch(loginSuccess({email, password: signupData?.password || 'User' }));
+
                                 console.log('Signup data :',{email,password});
                                 dispatch(login());
+                                dispatch(LoginSuccess(Logindata))
               alert('Logged In Successfully');
                navigate('/home');
                 }

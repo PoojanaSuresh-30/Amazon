@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import{ useDispatch, useSelector, type UseSelector } from "react-redux";
-import type{ RootState } from "../app/store";
-import { removeFromWishlist } from "../features/Signup/WishlistSlice";
-import type{ Product } from "../features/Signup/types";
+import type{ RootState } from "../../app/store";
+import { removeFromWishlist } from "../../features/Signup/WishlistSlice";
+import type{ Product } from "../../features/Signup/types";
 import './Wishlist.css';
 import { RiDeleteBin6Line } from "react-icons/ri";
 
@@ -10,23 +10,21 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Wishlist : React.FC = ()=>
 {
-   const wishlistitems = useSelector((state:RootState)=>state.wishlist.items);
+   const wishlistitems = useSelector((state:RootState)=>state.wishlist.items) || [];
    const dispatch =  useDispatch();
   
 
-   const handleRemove = ( id : string)=>
+   const handleRemove = ( id : number)=>
    {
      dispatch(removeFromWishlist(id));
-
-    
-
-
+     console.log(`item of id ${id} removed`);
+     
    }
 
         return(
             <section className="wishlist">
    <div className="wishlistitems">
-<h4>Wishlist</h4>
+<h4>Wishlist({wishlistitems.length})</h4>
                 <span><button>Move all to Bag</button></span>
    </div>
                 <div>
@@ -39,8 +37,10 @@ const Wishlist : React.FC = ()=>
                                     <img src={product.imageURL} alt={product.name} />
                                     <div>
                                         <h3>{product.name}</h3>
-                                        <p>${product.price}</p>
-                                        <button onClick={()=>handleRemove(product.id)}><RiDeleteBin6Line/></button>
+                                        <p>${product.price?.toFixed(2) ?? "0.00"}</p>
+                                        <button onClick={()=>handleRemove(product.id)} className="remove-item"><RiDeleteBin6Line className="delete"/></button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                                        <button className="addtocart">Add to cart</button>
                                     </div>
                                     </div>
                             ))}

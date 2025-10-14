@@ -22,9 +22,9 @@ const wishlistSlice =  createSlice({
         state.items.push(action.payload);
        }
         },
-        removeFromWishlist : (state,action : PayloadAction <String>)=>
+        removeFromWishlist : (state,action : PayloadAction <Number>)=>
         {
-         state.items = state.items.filter(item => item.id! === action.payload);
+         state.items = state.items.filter(item => item.id !== action.payload);
         },
     }
 });

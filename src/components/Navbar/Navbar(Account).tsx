@@ -3,18 +3,32 @@ import './Navbar2.css';
 import { FaRegHeart } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
 import { RiAccountCircleFill } from "react-icons/ri";
+import Badge, { type BadgeProps } from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/IconButton';
+import{ useDispatch, useSelector, type UseSelector } from "react-redux";
+import type{ RootState } from "../../app/store";
+import { useNavigate } from "react-router-dom";
 
 
 
 
+const Navbar2 : React.FC = () => {
+   const wishlistitems = useSelector((state:RootState)=>state.wishlist.items) || [];
+    const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
+const navigate = useNavigate();
+const handletopage = () =>
+{
+navigate('/wishlist');
+}
 
-
-
-
-class Navbar2 extends Component {
-
-
-  render() {
     return (
       
       <section className='navbar'>
@@ -58,8 +72,16 @@ class Navbar2 extends Component {
   </form>
 </search>
 
-<button className="wishlist">< FaRegHeart className="heart" /></button>
-<button className="cart"><TiShoppingCart className="cartshop"/></button>
+
+
+
+
+<Button aria-label="cart" className="wishlist" onClick={handletopage}>
+      <StyledBadge badgeContent={wishlistitems.length} color="secondary">
+        < FaRegHeart className="heart" />
+      </StyledBadge>
+    </Button>
+    <button className="cart" ><TiShoppingCart className="cartshop"/></button>
 <button className="account">< RiAccountCircleFill className="userProfile" /></button>
 
         </div>
@@ -70,7 +92,6 @@ class Navbar2 extends Component {
 
       </section>
     )
-  }
-}
+  };
 
 export default Navbar2;

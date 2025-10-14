@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Footer.css';
 import { SiMinutemailer } from "react-icons/si";
-import Qrcode from '../assets/images/Qrcode.jpg';
-import Googleplay from '../assets/images/GooglePlay.svg';
-import AppleStore from '../assets/images/AppleStore.svg';
+import Qrcode from '../../assets/images/Qrcode.jpg';
+import Googleplay from '../../assets/images/GooglePlay.svg';
+import AppleStore from '../../assets/images/AppleStore.svg';
 import { BiLogoFacebook } from "react-icons/bi";
 import { TfiTwitter } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa6";

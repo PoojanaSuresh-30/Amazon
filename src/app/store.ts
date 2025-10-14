@@ -3,6 +3,8 @@ import signupReducer from '../features/Signup/signupSlice';
 import authReducer from '../features/Signup/logincredentialsSlice';
 import { loadState, saveState } from '../utils/localStorage';
 import wishlistReducer from '../features/Signup/WishlistSlice';
+import { loginReducer } from "./reducer";
+import { CartReducer } from "./cartReducer";
 
 
 
@@ -12,6 +14,8 @@ const rootReducer = combineReducers({
   signup: signupReducer,
   auth: authReducer,
   wishlist : wishlistReducer,
+  login : loginReducer,
+  cart : CartReducer,
 });
 export const store = configureStore (
     {

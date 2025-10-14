@@ -1,10 +1,10 @@
 import React,{useState} from "react";
-import {setSignupData} from '../features/Signup/logincredentialsSlice';
+import {setSignupData} from '../../features/Signup/logincredentialsSlice';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
-import sideImage from "../assets/images/Side Image.svg";
-import GoogleIcon from "../assets/images/Icon-Google.svg";
+import sideImage from "../../assets/images/Side Image.svg";
+import GoogleIcon from "../../assets/images/Icon-Google.svg";
 import "./Signup.css";
 
 

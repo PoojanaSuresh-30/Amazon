@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./components/Signup";
-import LoginPage from "./components/Login";
-import HomePage from "./components/Home";
-import PublicLayout from "./components/PublicLayout";
-import HomeLayout from "./components/HomePageLayout";
-import Wishlist from "./components/Wishlist";
+import Signup from "./components/Signup/Signup";
+import LoginPage from "./components/Login/Login";
+import PublicLayout from "./components/Layout/PublicLayout";
+import HomeLayout from "./components/Layout/HomePageLayout";
+import HomePage from "./components/HomePage/Home";
+import Wishlist from "./components/Wishlist/Wishlist";
 
 function App() {
   return (
