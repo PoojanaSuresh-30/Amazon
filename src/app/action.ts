@@ -15,12 +15,6 @@ export type LoginAction =
 | {type : 'LOGIN_FAILED', error : string};
 
 
-//action creators
-
-// export function loginRequest(input: loginData | null) : LoginAction{
-//     return {type : "LOGIN_REQUEST", input};
-// }
-
 export function loginRequest(email : string, password : string) : LoginAction{
     return {type : "LOGIN_REQUEST",email,password };
 }

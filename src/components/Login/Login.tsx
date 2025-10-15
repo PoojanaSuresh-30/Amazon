@@ -88,7 +88,7 @@ import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
 
                                 console.log('Signup data :',{email,password});
                                 dispatch(login());
-                                dispatch(LoginSuccess(Logindata))
+                                dispatch(LoginSuccess(Logindata));
               alert('Logged In Successfully');
                navigate('/home');
                 }
@@ -98,6 +98,7 @@ import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
                   alert('Invalid Credentials')
                   
                    dispatch(loginFailure('Email or password missing'));
+                   dispatch(LoginFailure('Invalid Credentials'));
                 }
               
               
