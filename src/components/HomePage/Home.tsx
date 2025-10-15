@@ -18,14 +18,17 @@ import { MdOutlineArrowCircleRight } from "react-icons/md";
 import { GoStarFill } from "react-icons/go";
 import { BsCart4 } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa6";
+import type { AppDispatch } from '../../app/store';
 import{ useDispatch} from "react-redux";
 import { addtoWishlist } from "../../features/Signup/WishlistSlice";
+import { addTocart } from "../../app/CartActions";
+import type{ CartItem } from "../../app/cartReducer";
 import type{ Product, wishlistItem } from "../../features/Signup/types";
 // import { useNavigate } from "react-router-dom";
 
 const HomePage : React.FC = () =>
 { 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     //  const navigate = useNavigate();
         const countdownDate : Date = new Date("October 16, 2025 15:50:00");
         const [timeLeft, setTimeLeft] = useState(
@@ -44,6 +47,13 @@ const HomePage : React.FC = () =>
         dispatch(addtoWishlist(product));
         
     }
+
+    const handleaddtocart = (cart : CartItem)=>
+    {
+        dispatch(addTocart(cart.productId,cart.name, cart.price, cart.imageURL));
+    }
+
+
     useEffect(()=>
     {
    const Interval = setInterval(()=>
@@ -119,7 +129,14 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
                         <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                        <button onClick={()=> handleaddtocart({
+                            productId : 1,
+                            name : "HAVIT HV-G92 Gamepad",
+                            price : 120,
+                            imageURL : frame1,
+                            quantity : 1,
+
+                        })}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
                            id : 1,  
         name: "HAVIT HV-G92 Gamepad",
         price: 120,
@@ -136,7 +153,13 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                        <button onClick={()=>handleaddtocart({
+                             productId : 2,
+                            name : "S-Series Comfort Chair",
+                            price : 375,
+                            imageURL : frame2,
+                            quantity : 1,
+                        })}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
        id : 2,  
         name: "S-Series Comfort Chair",
@@ -154,7 +177,13 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                        <button onClick={()=>handleaddtocart({
+                               productId : 3,
+                            name : "IPS LCD Gaming Monitor",
+                            price : 370,
+                            imageURL : frame3,
+                            quantity : 1,
+                        })}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
                             id : 3,
                             name : "IPS LCD Gaming Monitor",
                             price : 370,
@@ -170,7 +199,13 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>
+                        <button onClick={()=>handleaddtocart({
+                             productId : 4,
+                            name : "AK - 900 Wired Keyboard",
+                            price : 960,
+                            imageURL : frame4,
+                            quantity : 1,
+                        })}> <BsCart4/></button> <button onClick={()=>
                             handleAddtowishlist({
                                 id : 4,
                                 name : "AK - 900 Wired Keyboard",
@@ -188,7 +223,15 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                        <button onClick={()=>handleaddtocart(
+                            {
+                                  productId : 5,
+                            name : "ASUS FHD Gaming Laptop",
+                            price : 960,
+                            imageURL : frame5,
+                            quantity : 1,
+                            }
+                        )}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
                                 id : 5,
                                 name : "ASUS FHD Gaming Laptop",
@@ -206,7 +249,15 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
+                        <button onClick={()=>handleaddtocart(
+                            {
+                                 productId : 6,
+                            name : "Quilted Satin Jacket",
+                            price : 300,
+                            imageURL : frame6,
+                            quantity : 1,
+                            }
+                        )}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist(
                             {
                                 id : 6,
                                 name :"Quilted Satin Jacket",
@@ -224,7 +275,15 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                        <button onClick={()=>handleaddtocart(
+                            {
+                                productId : 7,
+                            name : "GP11 Shooter USB Gamepad",
+                            price : 500,
+                            imageURL : frame7,
+                            quantity : 1,
+                            }
+                        )}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
                             id : 7,
                             name : "GP11 Shooter USB Gamepad",
                             price : 500,
@@ -239,7 +298,15 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                        <button onClick={()=>handleaddtocart(
+                            {
+                                 productId : 8,
+                            name : "RGB Liquid CPU cooler",
+                            price : 400,
+                            imageURL : frame8,
+                            quantity : 1,
+                            }
+                        )}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
                             id : 8,
                             name : "RGB Liquid CPU cooler",
                             price : 400,
@@ -254,7 +321,15 @@ const HomePage : React.FC = () =>
                         <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/>   <GoStarFill className="star"/> <span>(88)</span>
 <br />
                         <br />
-                        <button> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
+                        <button onClick={()=>handleaddtocart(
+                            {
+                                 productId : 9,
+                            name : "Gucci duffle bag",
+                            price : 800,
+                            imageURL : frame9,
+                            quantity : 1,
+                            }
+                        )}> <BsCart4/></button> <button onClick={()=>handleAddtowishlist({
                             id : 9,
                             name : "Gucci duffle bag",
                             price : 800,

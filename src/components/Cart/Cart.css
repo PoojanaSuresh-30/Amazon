@@ -1,0 +1,70 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.cartpage
+{
+    padding: 2%;
+}
+.cartitems h4
+{
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    line-height: 1.6;
+    padding-bottom: 5%;
+}
+.cartitems p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+ .cart-items
+ {
+    display: flex;
+    gap: 10%;
+    padding: 2%;
+ }
+
+ p{
+    font-size: 20px;
+    font-family: poppins;
+    font-weight: 600;
+    line-height: 1.6;
+ }
+ .removefromcart
+ {
+    padding: 5%;
+    border: none;
+    width: 20%;
+    margin-top: 15%;
+    border-radius: 8px;
+ }
+ .removefromcart
+ {
+    transform: scale(1.8);
+ }
+.checkout
+{
+      padding: 1%;
+        width: 10%;
+        border: none;
+        background-color: #000000;
+        font-size: 16px;
+        color: #ffffff;
+        font-family: 'Times New Roman', Times, serif;
+         border-radius: 8px;
+}
+.subtotal
+{
+    padding-top: 3%;
+    font-size: 32px;
+    font-weight: 800;
+        color: #000000;
+        font-family: 'Times New Roman', Times, serif;
+         border-radius: 8px;
+}

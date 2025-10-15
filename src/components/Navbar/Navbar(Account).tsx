@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar2 : React.FC = () => {
    const wishlistitems = useSelector((state:RootState)=>state.wishlist.items) || [];
+   const cartItem = useSelector((state:RootState)=>state.cart.items) || [];
     const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
     right: -3,
@@ -27,6 +28,11 @@ const navigate = useNavigate();
 const handletopage = () =>
 {
 navigate('/wishlist');
+}
+
+const handletocartpage = () =>
+{
+  navigate('/cart');
 }
 
     return (
@@ -55,7 +61,7 @@ navigate('/wishlist');
         <div className='links'>
        
          <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="./home">Home</a></li>
           <li><a href="">Contact</a></li>
           <li><a href="">About</a></li>
             <li><a href="/signup" className='active'>Signup</a></li>
@@ -81,7 +87,11 @@ navigate('/wishlist');
         < FaRegHeart className="heart" />
       </StyledBadge>
     </Button>
-    <button className="cart" ><TiShoppingCart className="cartshop"/></button>
+    <Button aria-label="cart" className="cart" onClick={handletocartpage}>
+      <StyledBadge badgeContent={cartItem.length} color="secondary">
+        <TiShoppingCart className="cartshop"/>
+      </StyledBadge>
+    </Button>
 <button className="account">< RiAccountCircleFill className="userProfile" /></button>
 
         </div>

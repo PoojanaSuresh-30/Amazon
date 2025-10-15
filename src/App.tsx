@@ -5,6 +5,7 @@ import PublicLayout from "./components/Layout/PublicLayout";
 import HomeLayout from "./components/Layout/HomePageLayout";
 import HomePage from "./components/HomePage/Home";
 import Wishlist from "./components/Wishlist/Wishlist";
+import CartPage from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route element={<HomeLayout />}>
           <Route path="/home" element={<HomePage/>} />
           <Route path="/wishlist" element={<Wishlist/>} />
+          <Route path="/cart" element = {<CartPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

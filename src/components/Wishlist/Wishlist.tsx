@@ -5,6 +5,7 @@ import { removeFromWishlist } from "../../features/Signup/WishlistSlice";
 import type{ Product } from "../../features/Signup/types";
 import './Wishlist.css';
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { addTocart } from "../../app/CartActions";
 
 
 
@@ -19,6 +20,12 @@ const Wishlist : React.FC = ()=>
      dispatch(removeFromWishlist(id));
      console.log(`item of id ${id} removed`);
      
+   }
+
+   const handleaddtocart = (id : number,name : string, price : number,imageURL : string,quantity : number)=>
+   {
+    dispatch(addTocart(id,name,price,imageURL,quantity));
+    dispatch(removeFromWishlist(id));
    }
 
         return(
@@ -40,7 +47,7 @@ const Wishlist : React.FC = ()=>
                                         <p>${product.price?.toFixed(2) ?? "0.00"}</p>
                                         <button onClick={()=>handleRemove(product.id)} className="remove-item"><RiDeleteBin6Line className="delete"/></button>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-                                        <button className="addtocart">Add to cart</button>
+                                        <button className="addtocart" onClick={()=>handleaddtocart(product.id,product.name,product.price,product.imageURL,1)}>Add to cart</button>
                                     </div>
                                     </div>
                             ))}
