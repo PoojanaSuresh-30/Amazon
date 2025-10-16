@@ -5,7 +5,7 @@ import type { AppDispatch, RootState } from "../../app/store.ts";
 import sideImage from "../../assets/images/Side Image.svg";
 import './Login.css';
 import TextField from "@mui/material/TextField";
-import {loginSuccess, loginFailure, clearAuthData,login} from '../../features/Signup/logincredentialsSlice.ts';
+import {loginSuccess, loginFailure,login} from '../../features/Signup/logincredentialsSlice.ts';
 import { useNavigate } from "react-router-dom";
 import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
 

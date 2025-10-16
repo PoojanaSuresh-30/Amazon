@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import{ useDispatch, useSelector, type UseSelector } from "react-redux";
+import React from "react";
+import{ useDispatch, useSelector } from "react-redux";
 import type { AppDispatch } from '../../app/store';
 import type{ RootState } from "../../app/store";
 import type { CartItem } from "../../app/cartReducer";

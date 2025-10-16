@@ -1,9 +1,8 @@
-import React,{Component} from "react";
+import React from "react";
 import { useState,useEffect } from "react";
 import './HomePage.css';
 import HomePagebg from '../../assets/images/HomePagebg.svg';
 import rectangle from '../../assets/images/Rectangle 18.svg';
-import { IoLogoApple } from "react-icons/io5";
 import frame1 from '../../assets/images/Frame1.svg';
 import frame2 from '../../assets/images/Frame2.svg';
 import frame3 from '../../assets/images/Frame3.svg';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import './Footer.css';
 import { SiMinutemailer } from "react-icons/si";
 import Qrcode from '../../assets/images/Qrcode.jpg';

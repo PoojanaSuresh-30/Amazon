@@ -1,10 +1,9 @@
 import React from "react";
-import{ useSelector, useDispatch } from "react-redux";
-import type { AppDispatch, RootState } from "../../app/store.ts";
+import{ useSelector } from "react-redux";
+import type { RootState } from "../../app/store.ts";
 import './Profile.css';
 import { PiSmiley } from "react-icons/pi";
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 
 
 const ProfilePage : React.FC = () =>

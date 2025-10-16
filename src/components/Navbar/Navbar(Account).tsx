@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import React from "react";
 import './Navbar2.css';
 import { FaRegHeart } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
@@ -6,7 +6,7 @@ import { RiAccountCircleFill } from "react-icons/ri";
 import Badge, { type BadgeProps } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/IconButton';
-import{ useDispatch, useSelector, type UseSelector } from "react-redux";
+import{ useDispatch, useSelector} from "react-redux";
 import type{ RootState } from "../../app/store";
 import { useNavigate } from "react-router-dom";
 import { RiAccountPinCircleLine } from "react-icons/ri";
@@ -14,7 +14,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
 import { BiLogOutCircle } from "react-icons/bi";
-import { logout } from "../../features/Signup/logincredentialsSlice";
+import { clearAuthData, logout } from "../../features/Signup/logincredentialsSlice";
 import { resetForm } from "../../features/Signup/signupSlice";
 
 
@@ -47,7 +47,7 @@ const handletocartpage = () =>
 const handletologout = () =>
 {
   dispatch(logout());
-  dispatch(resetForm());
+  dispatch(clearAuthData());
 
 }
 const handletoprofile = () =>

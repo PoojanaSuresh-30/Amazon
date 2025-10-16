@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import  { Component } from 'react';
 import './Navbar.css';
-import { IoIosSearch } from "react-icons/io";
+
 
 
 
