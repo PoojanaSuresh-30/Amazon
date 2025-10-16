@@ -1,0 +1,76 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.profile
+{
+    padding: 2%;
+}
+h4{
+    padding-bottom: 4%;
+}
+
+.welcome
+{
+    transform: scale(1.5);
+    color: #d80e0e;
+    
+}
+legend
+{
+    font-size: 32px;
+}
+label{
+    font-size: 25px;
+}
+form{
+    padding: 3%;
+    font-family: 'Times New Roman', Times, serif;
+}
+input
+{
+    font-size: 20px;
+}
+.legend
+{
+    padding: 2%;
+}
+.formcredentials label
+{
+    padding: 5%;
+}
+.formcredentials input
+{
+    padding: 5%;
+    margin-bottom: 2%;
+}
+.formcredentials
+{
+    display: flex;
+    gap: 50%;
+    padding-left: 5%;
+}
+.password
+{
+    padding-left: 5%;
+    padding-bottom: 2%;
+}
+.password  p
+{
+   padding: 1%;
+   font-size: 28px;
+   font-weight: 400;
+   font-family: 'Times New Roman', Times, serif;
+}
+.password label
+{
+      padding: 2%;
+}
+.password input
+{
+     padding: 1%;
+    margin-bottom: 2%;
+}

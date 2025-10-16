@@ -1,6 +1,7 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const REDUCE_FROM_CART = 'REDUCE_FROM_CART';
+export const INCREASE_TO_CART = 'INCREASE_TO_CART';
 
 
 export interface AddtoCartAction
@@ -21,4 +22,10 @@ export interface ReducefromCartAction
     payload : {productId : number, quantity : number};
 }
 
-export type CartActionTypes = AddtoCartAction | RemovefromCartAction | ReducefromCartAction ;
+export interface IncreasetoCartAction
+{
+    type : typeof INCREASE_TO_CART;
+    payload : {productId : number, quantity : number};
+}
+
+export type CartActionTypes = AddtoCartAction | RemovefromCartAction | ReducefromCartAction | IncreasetoCartAction;

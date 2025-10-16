@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REDUCE_FROM_CART,REMOVE_FROM_CART,type CartActionTypes } from "./cartActionTypes";
+import { ADD_TO_CART,INCREASE_TO_CART,REDUCE_FROM_CART,REMOVE_FROM_CART,type CartActionTypes } from "./cartActionTypes";
 
 
 
@@ -61,6 +61,15 @@ export const CartReducer  = (state = initialState , action : CartActionTypes): C
                         : item
                     )
                     
+                };
+            case INCREASE_TO_CART:
+                return{
+                    ...state,
+                    items : state.items.map(item =>
+                        item.productId === action.payload.productId
+                        ? {...item, quantity : item.quantity + 1}
+                        : item
+                    )
                 }
 
                 default : return state;

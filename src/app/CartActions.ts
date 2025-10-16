@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_FROM_CART,REDUCE_FROM_CART,type RemovefromCartAction,type AddtoCartAction,type ReducefromCartAction } from "./cartActionTypes";
+import { ADD_TO_CART,REMOVE_FROM_CART,REDUCE_FROM_CART,INCREASE_TO_CART,type RemovefromCartAction,type AddtoCartAction,type ReducefromCartAction, type IncreasetoCartAction } from "./cartActionTypes";
 
 
 export const addTocart = (productId : number, name : string, price : number, imageURL : string,quantity : number =1):AddtoCartAction =>(
@@ -22,5 +22,13 @@ export const reduceFromcart = (productId:number,quantity : number ):ReducefromCa
         payload : {productId,quantity},
     }
 );
+
+export const increaseTocart = (productId:number,quantity : number ):IncreasetoCartAction => (
+    {
+        type : INCREASE_TO_CART,
+        payload : {productId,quantity},
+    }
+);
+
 
 

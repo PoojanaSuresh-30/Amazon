@@ -24,6 +24,7 @@ const Wishlist : React.FC = ()=>
 
    const handleaddtocart = (id : number,name : string, price : number,imageURL : string,quantity : number)=>
    {
+    // @ts-expect-error
     dispatch(addTocart(id,name,price,imageURL,quantity));
     dispatch(removeFromWishlist(id));
    }

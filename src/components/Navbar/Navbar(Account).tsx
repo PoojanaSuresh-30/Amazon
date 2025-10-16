@@ -9,6 +9,15 @@ import Button from '@mui/material/IconButton';
 import{ useDispatch, useSelector, type UseSelector } from "react-redux";
 import type{ RootState } from "../../app/store";
 import { useNavigate } from "react-router-dom";
+import { RiAccountPinCircleLine } from "react-icons/ri";
+import { FiShoppingBag } from "react-icons/fi";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { IoIosStarOutline } from "react-icons/io";
+import { BiLogOutCircle } from "react-icons/bi";
+import { logout } from "../../features/Signup/logincredentialsSlice";
+import { resetForm } from "../../features/Signup/signupSlice";
+
+
 
 
 
@@ -16,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar2 : React.FC = () => {
    const wishlistitems = useSelector((state:RootState)=>state.wishlist.items) || [];
    const cartItem = useSelector((state:RootState)=>state.cart.items) || [];
+   const dispatch = useDispatch();
     const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
     right: -3,
@@ -34,11 +44,23 @@ const handletocartpage = () =>
 {
   navigate('/cart');
 }
+const handletologout = () =>
+{
+  dispatch(logout());
+  dispatch(resetForm());
+
+}
+const handletoprofile = () =>
+{
+  console.log("hi")
+  navigate('/profile');
+}
 
     return (
+
       
       <section className='navbar'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+    
       <div className='header'>
 
         <div className='summer'>
@@ -92,7 +114,19 @@ const handletocartpage = () =>
         <TiShoppingCart className="cartshop"/>
       </StyledBadge>
     </Button>
-<button className="account">< RiAccountCircleFill className="userProfile" /></button>
+
+
+
+<div className="dropdown">
+  <button className="dropbtn" onClick={handletoprofile}>< RiAccountCircleFill className="userProfile" /></button>
+  <div className="dropdown-content">
+    <a href="#"><RiAccountPinCircleLine className="drop"/>&nbsp;&nbsp;Manage My Account</a>
+    <a href="#"><FiShoppingBag className="drop"/>&nbsp;&nbsp;My Order</a>
+    <a href="#"><IoCloseCircleOutline className="drop"/>&nbsp;&nbsp;My Cancellations</a>
+    <a href="">< IoIosStarOutline className="drop"/>&nbsp;&nbsp;My Reviews</a>
+    <a href="/signup"><BiLogOutCircle className="drop" onClick={()=>handletologout}/>&nbsp;&nbsp;Logout</a>
+  </div>
+</div>
 
         </div>
       </div>

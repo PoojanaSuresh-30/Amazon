@@ -6,6 +6,9 @@ import HomeLayout from "./components/Layout/HomePageLayout";
 import HomePage from "./components/HomePage/Home";
 import Wishlist from "./components/Wishlist/Wishlist";
 import CartPage from "./components/Cart/Cart";
+import ProfilePage from "./components/Profile/Profile";
+
+
 
 function App() {
   return (
@@ -23,6 +26,7 @@ function App() {
           <Route path="/home" element={<HomePage/>} />
           <Route path="/wishlist" element={<Wishlist/>} />
           <Route path="/cart" element = {<CartPage/>}/>
+          <Route path="/profile" element = {<ProfilePage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
