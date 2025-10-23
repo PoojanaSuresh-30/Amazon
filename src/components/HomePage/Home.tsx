@@ -22,8 +22,8 @@ import{ useDispatch} from "react-redux";
 import { addtoWishlist } from "../../features/Signup/WishlistSlice";
 import { addTocart } from "../../app/CartActions";
 import type{ CartItem } from "../../app/cartReducer";
-import type{ Product, wishlistItem } from "../../features/Signup/types";
-// import { useNavigate } from "react-router-dom";
+import type{ Product } from "../../features/Signup/types";
+
 
 const HomePage : React.FC = () =>
 { 
@@ -351,7 +351,4 @@ const HomePage : React.FC = () =>
 
 export default HomePage;
 
-function dispatch(arg0: { payload: wishlistItem; type: "wishlist/addtoWishlist"; }) {
-    throw new Error("Function not implemented.");
-}
 

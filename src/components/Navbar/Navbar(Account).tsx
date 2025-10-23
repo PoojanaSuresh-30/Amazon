@@ -47,6 +47,7 @@ const handletocartpage = () =>
 const handletologout = () =>
 {
   dispatch(logout());
+  dispatch(resetForm())
   dispatch(clearAuthData());
 
 }
