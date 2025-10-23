@@ -28,7 +28,7 @@ const Signup: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
    dispatch(setSignupData({name, email, password}));
-    navigate('/login');//redirect to login page
+    navigate('/home');//redirect to login page
      alert(`Welcome, ${name}!`);
   };
 
