@@ -28,8 +28,15 @@ const Signup: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
    dispatch(setSignupData({name, email, password}));
-    navigate('/login');//redirect to login page
-     alert(`Welcome, ${name}!`);
+   if(email&&password)
+   {
+    navigate('/login');
+    alert(`Welcome, ${name}!`);
+   }
+     else
+     {
+      alert("Please enter signup credentials!");
+     }
   };
 
 
@@ -59,10 +66,6 @@ const Signup: React.FC = () => {
         password : passwordValue
       }
 
-
-
-  
-  
       if(email && password)
       {
         localStorage.setItem('userProfile',JSON.stringify(UserData))
@@ -129,7 +132,7 @@ const Signup: React.FC = () => {
             </div>
 
             <p className="login">
-              Already have an account? <a href="./login">Log In</a>
+              Already have an account? <a href="/login">Log In</a>
             </p>
           </form>
         </div>

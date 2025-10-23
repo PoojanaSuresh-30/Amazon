@@ -48,25 +48,7 @@ import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
   if (savedData) {
     const userData: UserData = JSON.parse(savedData);
     const emailInput = userData.email;
-    const passwordInput = userData.password;
-    
-
-
-
-                
-                 
-
-                
-                
-        // dispatch(clearAuthData());
-             
-
-
-              
- 
-
-          
-              
+    const passwordInput = userData.password;    
                 if(emailInput === email && passwordInput === password)
 
                 {
@@ -77,20 +59,21 @@ import { loginRequest,LoginSuccess,LoginFailure } from "../../app/action.ts";
                   }
                 const Logindata : logindata =
                 {
-                  email  : emailInput,
-                  password : passwordInput,
+                  email  : email,
+                  password : password,
                 }
                  
-                  console.log('Successfully logged in!!');
+                  
                   
                   
                              dispatch(loginSuccess({email, password: signupData?.password || 'User' }));
 
-                                console.log('Signup data :',{email,password});
+                                console.log('Login data :',{email,password});
                                 dispatch(login());
                                 dispatch(LoginSuccess(Logindata));
               alert('Logged In Successfully');
                navigate('/home');
+               console.log('Successfully logged in!!');
                 }
    
                 else{
