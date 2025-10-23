@@ -28,6 +28,7 @@ const Signup: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
    dispatch(setSignupData({name, email, password}));
+<<<<<<< HEAD
    if(email&&password)
    {
     navigate('/login');
@@ -37,6 +38,10 @@ const Signup: React.FC = () => {
      {
       alert("Please enter signup credentials!");
      }
+=======
+    navigate('/login');//redirect to login page
+     alert(`Welcome, ${name}!`);
+>>>>>>> b0653878dab71be665ef3d200faf21a84bc953cb
   };
 
 
