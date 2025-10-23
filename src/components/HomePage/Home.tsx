@@ -10,7 +10,7 @@ import frame4 from '../../assets/images/Frame4.svg';
 import frame5 from '../../assets/images/Frame5.svg';
 import frame6 from '../../assets/images/Frame6.svg';
 import frame7 from '../../assets/images/Frame7.svg';
-import frame8 from '../../assets/images/Frame8.svg';
+import frame8 from '../../assets/images/frame8.svg';
 import frame9 from '../../assets/images/Frame9.svg';
 import { MdOutlineArrowCircleLeft } from "react-icons/md";
 import { MdOutlineArrowCircleRight } from "react-icons/md";
