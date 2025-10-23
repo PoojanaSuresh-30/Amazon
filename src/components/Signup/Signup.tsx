@@ -30,7 +30,7 @@ const Signup: React.FC = () => {
    dispatch(setSignupData({name, email, password}));
    if(email&&password)
    {
-    navigate('/login');
+    navigate('/home');
     alert(`Welcome, ${name}!`);
    }
      else
