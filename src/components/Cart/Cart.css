@@ -8,6 +8,7 @@
 .cartpage
 {
     padding: 2%;
+    margin-bottom: 10%;
 }
 .cartitems h4
 {
@@ -15,7 +16,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     line-height: 1.6;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
 }
 .cartitems p{
     font-size: 16px;
@@ -61,7 +62,7 @@
 }
 .subtotal
 {
-    padding-top: 3%;
+    padding-top: 2%;
     font-size: 32px;
     font-weight: 800;
         color: #000000;
