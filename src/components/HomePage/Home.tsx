@@ -29,7 +29,7 @@ const HomePage : React.FC = () =>
 { 
     const dispatch = useDispatch<AppDispatch>();
     //  const navigate = useNavigate();
-        const countdownDate : Date = new Date("October 16, 2025 15:50:00");
+        const countdownDate : Date = new Date("October 29, 2025 15:50:00");
         const [timeLeft, setTimeLeft] = useState(
             {
                 days : 0,
