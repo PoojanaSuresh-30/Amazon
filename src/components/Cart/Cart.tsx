@@ -97,7 +97,7 @@ dispatch(reduceFromcart(id,quantity));
                     )}
                     
                 </div>
-                <center className="subtotal"><p>Subtotal : {total}</p></center>
+                <center className="subtotal"><p>Subtotal : ${total}</p></center>
                 <br /><br /><br /><br />
                 <center> <button className="checkout">Checkout</button></center>
 
