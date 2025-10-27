@@ -7,13 +7,19 @@
 
 .signup
 {
-    padding-top: 2%;
     margin-bottom: 10%;
 }
 .signupbody
 {
     display: flex;
-    gap: 20%;
+    gap: 12%;
+}
+.signupbody .sideImage img
+{
+    height: 500px;
+    padding-top: 60px;
+    justify-content: center;
+    align-items: center;
 }
 .form
 {
@@ -27,11 +33,17 @@
     
 }
 .form p{
-    line-height: 24px;
+    line-height: 30px;
     font-size: 16px;
     font-weight: 400;
     font-family: poppins;
     padding-top: 10%;
+}
+.passwordError 
+{
+    color: #c01717;
+    font-size: 20px;
+
 }
 .form #standard-basic {
     font-family: poppins;
@@ -68,15 +80,16 @@
     justify-content: center;
 }
 
-.login
+.login 
 {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight:800;
     font-family: poppins;
     line-height: 24px;
+    color: #000000;
 }
 .login a{
-     font-size: 16px;
+     font-size: 20px;
     font-weight: 800;
     font-family: poppins;
     line-height: 24px;

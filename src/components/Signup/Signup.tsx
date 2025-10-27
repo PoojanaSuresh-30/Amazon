@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import {setSignupData} from '../../features/Signup/logincredentialsSlice';
+import React, { useState } from "react";
+import { setSignupData } from "../../features/Signup/logincredentialsSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
@@ -7,83 +7,70 @@ import sideImage from "../../assets/images/Side Image.svg";
 import GoogleIcon from "../../assets/images/Icon-Google.svg";
 import "./Signup.css";
 
-
-
-// import type { RootState, AppDispatch } from "../app/store.ts";
-// import { updateField, resetForm } from "../features/Signup/signupSlice.ts";
-
 const Signup: React.FC = () => {
   const dispatch = useDispatch();
-  const navigate =  useNavigate();
-  const [name,setName] = useState("");
-   const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const PasswordRegex =
+    /^[A-Za-z\d!@#$%^&*()_\-+=\[\]{};':"\\|,.<>\/?`~]{8,12}$/;
+  const pass: string = password;
 
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { id, value } = e.target;
-  //   dispatch(updateField({ field: id as "name" | "email" | "password", value }));
-  // };
-
+  console.log(message);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-   dispatch(setSignupData({name, email, password}));
-   if(email&&password)
-   {
-    navigate('/login');
-    alert(`Welcome, ${name}!`);
-   }
-     else
-     {
-      alert("Please enter signup credentials!");
-     }
-    
+    if (name && email && password) {
+      if (!PasswordRegex.test(pass)) {
+        setMessage("Enter the valid Password 8-12 characters, letter,symbols/numbers");
+      } else {
+        setMessage("");
+        dispatch(setSignupData({ name, email, password }));
+        navigate("/login");
+        alert(`welcome, ${name} !`);
+      }
+    } else {
+      alert("Please enter Signup Credentials!!");
+    }
   };
 
-
   const saveCredentials = () => {
-
-      interface userData
-              {
-                name : string;
-                email : string;
-                password : string;
-              }
-
-
-        const nameInput = document.getElementById('name') as HTMLInputElement;
-      const emailInput = document.getElementById('email') as HTMLInputElement;
-      const passwordInput = document.getElementById('password') as HTMLInputElement;
-     
-
-      const nameValue = nameInput.value;
-      const emailValue = emailInput.value;
-      const passwordValue = passwordInput.value;
-
-      const UserData : userData = 
-      {
-        name : nameValue,
-        email : emailValue,
-        password : passwordValue
-      }
-
-      if(email && password)
-      {
-        localStorage.setItem('userProfile',JSON.stringify(UserData))
-        console.log('Email and Password stored in Local Storage');
-      }
-      else{
-        console.log('please enter both email and password');
-        
-      }
-  
+    interface userData {
+      name: string;
+      email: string;
+      password: string;
     }
-    
+
+    const nameInput = document.getElementById("name") as HTMLInputElement;
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
+
+    const nameValue = nameInput.value;
+    const emailValue = emailInput.value;
+    const passwordValue = passwordInput.value;
+
+    const UserData: userData = {
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+    };
+
+    if (email && password) {
+      localStorage.setItem("userProfile", JSON.stringify(UserData));
+      console.log("Email and Password stored in Local Storage");
+    } else {
+      console.log("please enter both email and password");
+    }
+  };
 
   return (
     <section className="signup">
-      <div className="loginbody">
-        <div>
+      <div className="signupbody">
+        <div className="sideImage">
           <img src={sideImage} alt="Signup side" />
         </div>
 
@@ -119,6 +106,7 @@ const Signup: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               fullWidth
             />
+            {message && <p className="passwordError">{message}</p>}
             <br />
 
             <button type="submit" className="account" onClick={saveCredentials}>

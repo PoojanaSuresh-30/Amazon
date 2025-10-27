@@ -8,8 +8,6 @@ import Wishlist from "./components/Wishlist/Wishlist";
 import CartPage from "./components/Cart/Cart";
 import ProfilePage from "./components/Profile/Profile";
 
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,10 +21,10 @@ function App() {
 
         {/* Home page with account navbar */}
         <Route element={<HomeLayout />}>
-          <Route path="/home" element={<HomePage/>} />
-          <Route path="/wishlist" element={<Wishlist/>} />
-          <Route path="/cart" element = {<CartPage/>}/>
-          <Route path="/profile" element = {<ProfilePage/>}/>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

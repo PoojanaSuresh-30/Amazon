@@ -12,14 +12,13 @@ background-color: #000000;
  bottom: 0%;
  left: 0%;
  width: 100%;
-
-
 }
 .elements
 {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 2%;
+    align-items: center;
+    padding-top: 15px;
     align-items: flex-start;
 }
 
@@ -44,13 +43,13 @@ background-color: #000000;
 
 .exclusive p{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 28px;
     padding-bottom: 10%;
 }
 .exclusive h5{
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     padding-bottom: 10%;
 }
@@ -64,7 +63,7 @@ background-color: #000000;
 }
 .exclusive input{
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     padding: 4%;
 }
@@ -73,18 +72,24 @@ background-color: #000000;
     /* background-color: #110847; */
      color: #ffffff;
   font-family: poppins;
+  line-height: 1.6;
+   font-size: 25px;
 }
 .QuickLink
 {
     /* background-color: #6e1248; */
      color: #ffffff;
   font-family: poppins;
+  line-height: 1.6;
+  font-size: 25px;
 }
-.DownloadApp
+.DownloadApp h4,p
 {
     /* background-color: #3d0a1b; */
      color: #ffffff;
   font-family: poppins;
+  line-height: 1.6;
+  font-size: 25px;
 }
 .qrcode{
     padding-top:8% ;
